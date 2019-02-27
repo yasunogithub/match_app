@@ -1,0 +1,17 @@
+version: '3'
+services:
+  db_match_app:
+    image: postgres
+    volumes:
+      - ./tmp/db:/var/lib/postgresql/data
+    ports:
+      - "5439:5439"
+  web_match_app:
+    build: .
+    command: bash -c "rm -f tmp/pids/server.pid && bundle exec rails s -p 3020 -b '0.0.0.0'"
+    volumes:
+      - .:/myapp
+    ports:
+      - "3020:3020"
+    depends_on:
+      - db_match_app

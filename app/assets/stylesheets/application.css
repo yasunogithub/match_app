@@ -1,0 +1,103 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+ /* list */
+ .schedules {
+     text-align: center;
+ }
+
+ ul {
+     list-style: none;
+     margin: 0;
+ }
+
+ ul.icon > li:first-child {
+     margin-left: 80px;
+ }
+
+ .icon li {
+     height: 130px;
+     border: solid 1px black;
+ }
+
+ .time {
+     width: 80px;
+ }
+
+ .time li {
+    border: solid 1px black;
+ }
+
+ .teacher li {
+    border: solid 1px black;
+ }
+
+ li {
+     height: 30px;
+ }
+
+ .icon {
+     display: flex;
+ }
+
+ .overview {
+     display: flex;
+ }
+
+ .scroll-schedules {
+     overflow: scroll;
+     height: 100px;
+ }
+
+ .icon_img {
+     width: 30%;
+     height: auto;
+ }
+
+ ul.teacher {
+     width: 258px;
+     padding: 0;
+ }
+
+ /* table */
+ thead.bb, tbody.cc {
+     display: block;
+ }
+
+ tbody.cc {
+     overflow: scroll;
+     height: 100px;
+ }
+
+ table.aa td, th {
+     table-layout: fixed;
+ }
+
+ th {
+     width: 254px;
+ }
+
+ td {
+     width: 254px;
+ }
+
+ img {
+    width: 30%;
+    height: auto;
+ }
+
+ .bb tr > th:first-child, .cc tr > th:first-child {
+     width: 110px;
+ }
