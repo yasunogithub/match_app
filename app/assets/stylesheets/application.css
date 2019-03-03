@@ -13,76 +13,44 @@
  *= require_tree .
  *= require_self
  */
- /* list */
- .schedules {
+
+ body {
+    font-family: 'Hiragino Kaku Gothic ProN', 'ヒラギノ角ゴ ProN W3', 'Meiryo', 'メイリオ', 'Osaka', 'MS PGothic', arial, helvetica, sans-serif;
+ }
+ /* table */
+ .container {
      text-align: center;
  }
 
- ul {
-     list-style: none;
-     margin: 0;
+ ._mCS_1 .mCSB_dragger .mCSB_dragger_bar {
+     background-color: navy;
+ }
+ 
+ .mCSB_scrollTools .mCSB_dragger.mCSB_dragger_onDrag .mCSB_dragger_bar {
+     background-color: navy;
  }
 
- ul.icon > li:first-child {
-     margin-left: 80px;
- }
-
- .icon li {
-     height: 130px;
-     border: solid 1px black;
- }
-
- .time {
-     width: 80px;
- }
-
- .time li {
-    border: solid 1px black;
- }
-
- .teacher li {
-    border: solid 1px black;
- }
-
- li {
-     height: 30px;
- }
-
- .icon {
-     display: flex;
- }
-
- .overview {
-     display: flex;
- }
-
- .scroll-schedules {
-     overflow: scroll;
-     height: 100px;
- }
-
- .icon_img {
-     width: 30%;
-     height: auto;
- }
-
- ul.teacher {
-     width: 258px;
-     padding: 0;
- }
-
- /* table */
- thead.bb, tbody.cc {
+ thead.teachers, tbody.schedules {
      display: block;
+     /* border: 1px solid black; */
  }
 
- tbody.cc {
-     overflow: scroll;
-     height: 100px;
+ tbody.schedules {
+     overflow: hidden;
+     height: 400px;
  }
 
- table.aa td, th {
+ table.reservation td, th {
      table-layout: fixed;
+ }
+
+ table {
+     border-collapse: separate;
+     border-spacing: 2px 0;
+     border: 1.5px solid darkgray;
+     border-radius: 10px;
+     overflow: hidden;
+     margin: 0 auto;
  }
 
  th {
@@ -96,8 +64,167 @@
  img {
     width: 30%;
     height: auto;
+    padding-top: 10px;
  }
 
- .bb tr > th:first-child, .cc tr > th:first-child {
+ .teachers tr > th:first-child, .schedules tr > th:first-child {
      width: 110px;
  }
+
+ .teachers {
+     padding-bottom: 27px;
+     border-bottom: 1.5px solid darkgray;
+ }
+
+ .teachers tr th p {
+     margin-top: 0;
+ }
+
+ /* .schedules {
+     margin-top: 15px;
+     border-top: 1px solid black;
+ } */
+
+ .schedules tr {
+     height: 50px;
+     vertical-align: middle;
+ }
+
+ .schedules tr th {
+     border-right: 1.5px solid darkgray;
+ }
+
+ .schedules tr:nth-child(even) {
+     background-color: #efefef;
+ }
+
+ .teachers th:nth-child(2) {
+    /* box-shadow: 0px 1px 1px rgba(255,255,255,0.8) inset; */
+    border-radius: 5px 5px 10px 10px;
+    background: #ffefef;
+    vertical-align: middle;
+    text-align: center;
+    /* width: 125px;
+    height: 50px; */
+    position: relative;
+    /* color: #fff; */
+    /* text-shadow: 1px 1px 1px rgba(0,0,0,0.2); */
+    /* font-size: 24px; */
+ }
+
+ .teachers th:nth-child(2):after {
+    top: 134px;
+    left: 10px;
+    content: "";
+    height: 0;
+    width: 0;
+    position: absolute;
+    pointer-events: none;
+    border: 118px solid transparent;
+    border-top: #ffefef 25px solid;
+ }
+ 
+ .teachers th:nth-child(3) {
+    /* box-shadow: 0px 1px 1px rgba(255,255,255,0.8) inset; */
+    border-radius: 5px 5px 10px 10px;
+    background: #f5efff;
+    vertical-align: middle;
+    text-align: center;
+    /* width: 125px;
+    height: 50px; */
+    position: relative;
+    /* color: #fff; */
+    /* text-shadow: 1px 1px 1px rgba(0,0,0,0.2); */
+    /* font-size: 24px; */
+ }
+
+ .teachers th:nth-child(3):after {
+    top: 134px;
+    left: 10px;
+    content: "";
+    height: 0;
+    width: 0;
+    position: absolute;
+    pointer-events: none;
+    border: 118px solid transparent;
+    border-top: #f5efff 25px solid;
+ }
+ 
+ .teachers th:nth-child(4) {
+    /* box-shadow: 0px 1px 1px rgba(255,255,255,0.8) inset; */
+    border-radius: 5px 5px 10px 10px;
+    background: #eff9ff;
+    vertical-align: middle;
+    text-align: center;
+    /* width: 125px;
+    height: 50px; */
+    position: relative;
+    /* color: #fff; */
+    /* text-shadow: 1px 1px 1px rgba(0,0,0,0.2); */
+    /* font-size: 24px; */
+ }
+
+ .teachers th:nth-child(4):after {
+    top: 134px;
+    left: 10px;
+    content: "";
+    height: 0;
+    width: 0;
+    position: absolute;
+    pointer-events: none;
+    border: 118px solid transparent;
+    border-top: #eff9ff 25px solid;
+ }
+
+ .teachers th:nth-child(5) {
+    /* box-shadow: 0px 1px 1px rgba(255,255,255,0.8) inset; */
+    border-radius: 5px 5px 10px 10px;
+    background: #efffef;
+    vertical-align: middle;
+    text-align: center;
+    /* width: 125px;
+    height: 50px; */
+    position: relative;
+    /* color: #fff; */
+    /* text-shadow: 1px 1px 1px rgba(0,0,0,0.2); */
+    /* font-size: 24px; */
+ }
+
+ .teachers th:nth-child(5):after {
+    top: 134px;
+    left: 10px;
+    content: "";
+    height: 0;
+    width: 0;
+    position: absolute;
+    pointer-events: none;
+    border: 118px solid transparent;
+    border-top: #efffef 25px solid;
+ }
+
+ /* teacher-headerのbase */
+ /* .teachers th:nth-child(n+2) {
+    box-shadow: 0px 1px 1px rgba(255,255,255,0.8) inset;
+    border-radius: 5px 5px 10px 10px;
+    background: #88b7d5;
+    vertical-align: middle;
+    text-align: center;
+    width: 125px;
+    height: 50px;
+    position: relative;
+    color: #fff;
+    text-shadow: 1px 1px 1px rgba(0,0,0,0.2);
+    font-size: 24px;
+ }
+
+ .teachers th:nth-child(n+2):after {
+    top: 140px;
+    left: 10px;
+    content: "";
+    height: 0;
+    width: 0;
+    position: absolute;
+    pointer-events: none;
+    border: 118px solid transparent;
+    border-top: #88b7d5 15px solid;
+ } */

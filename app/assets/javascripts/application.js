@@ -15,3 +15,14 @@
 //= require activestorage
 //= require turbolinks
 //= require_tree .
+
+$(function(){
+    $(window).on("load",function(){
+       $(".schedules").mCustomScrollbar({
+           theme:"inset",
+           advanced:{
+            updateOnContentResize: true
+          }
+       });
+    });
+});

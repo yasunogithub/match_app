@@ -1,79 +1,24 @@
 <h1>Reservations#index</h1>
 <p>Find me in app/views/reservations/index.html.erb</p>
 
-<h4>&lt;list Ver.&gt;</h4>
-<div class="schedules">
-    <ul class="icon">
-        <li><%= image_tag("sample_icon.png", class:"icon_img") %><p>teacher01</p></li>
-        <li><%= image_tag("sample_icon.png", class:"icon_img") %><p>teacher02</p></li>
-        <li><%= image_tag("sample_icon.png", class:"icon_img") %><p>teacher03</p></li>
-        <li><%= image_tag("sample_icon.png", class:"icon_img") %><p>teacher04</p></li>
-    </ul>
-    <div class="scroll-schedules">
-        <div class="viewport">
-            <div class="overview">
-                <ul class="time">
-                    <li>9:00</li>
-                    <li>10:00</li>
-                    <li>11:00</li>
-                    <li>12:00</li>
-                    <li>13:00</li>
-                </ul>
-
-                <ul class="teacher">
-                    <li><a href="#">予約可</a></li>
-                    <li></li>
-                    <li><a href="#">予約可</a></li>
-                    <li><a href="#">予約可</a></li>
-                    <li></li>
-                </ul>
-                <ul class="teacher">
-                    <li></li>
-                    <li></li>
-                    <li><a href="#">予約可</a></li>
-                    <li></li>
-                    <li></li>
-                </ul>
-                <ul class="teacher">
-                    <li><a href="#">予約可</a></li>
-                    <li><a href="#">予約可</a></li>
-                    <li><a href="#">予約可</a></li>
-                    <li><a href="#">予約可</a></li>
-                    <li><a href="#">予約可</a></li>
-                </ul>
-                <ul class="teacher">
-                    <li><a href="#">予約可</a></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li><a href="#">予約可</a></li>
-                </ul>
-            </div>
-        </div>
-    </div>
-</div>
-
-<br>
-<br>
-
 <h4>&lt;table Ver.&gt;</h4>
-<div class="schedules">
-    <table class="aa" border="1">
-        <thead class="bb">
+<div class="container">
+    <table class="reservation">
+        <thead class="teachers">
             <tr>
                 <th></th>
-                <th><%= image_tag("sample_icon.png") %><p>teacher01</p></th>
-                <th><%= image_tag("sample_icon.png") %><p>teacher02</p></th>
-                <th><%= image_tag("sample_icon.png") %><p>teacher03</p></th>
-                <th><%= image_tag("sample_icon.png") %><p>teacher04</p></th>
+                <th><%= image_tag("sample_icon.png") %><p>鈴木 一郎</p></th>
+                <th><%= image_tag("sample_icon.png") %><p>古賀 涼</p></th>
+                <th><%= image_tag("sample_icon.png") %><p>仲村 なつみ</p></th>
+                <th><%= image_tag("sample_icon.png") %><p>真鍋 竜也</p></th>
             </tr>
         </thead>
-        <tbody class="cc">
+        <tbody class="schedules">
             <tr>
                 <th>9:00</th><td></td><td></td><td></td><td><a href="#">予約可</a></td>
             </tr>
             <tr>
-                <th>10:00</th><td><a href="#">予約可</a></td><td></td><td></td><td><a href="#">予約可</a></td>
+                <th>10:00</th><td><a href="#">予約可</a></td><td><a href="#">予約可</a></td><td></td><td><a href="#">予約可</a></td>
             </tr>
             <tr>
                 <th>11:00</th><td></td><td></td><td></td><td><a href="#">予約可</a></td>
@@ -82,7 +27,31 @@
                 <th>12:00</th><td><a href="#">予約可</a></td><td></td><td></td><td><a href="#">予約可</a></td>
             </tr>
             <tr>
-                <th>13:00</th><td></td><td><a href="#">予約可</a></td><td></td><td><a href="#">予約可</a></td>
+                <th>13:00</th><td><a href="#">予約可</a></td><td></td><td></td><td></td>
+            </tr>
+            <tr>
+                <th>14:00</th><td></td><td></td><td></td><td></td>
+            </tr>
+            <tr>
+                <th>15:00</th><td></td><td><a href="#">予約可</a></td><td><a href="#">予約可</a></td><td></td>
+            </tr>
+            <tr>
+                <th>16:00</th><td></td><td></td><td></td><td></td>
+            </tr>
+            <tr>
+                <th>17:00</th><td><a href="#">予約可</a></td><td></td><td></td><td></td>
+            </tr>
+            <tr>
+                <th>18:00</th><td><a href="#">予約可</a></td><td><a href="#">予約可</a></td><td></td><td></td>
+            </tr>
+            <tr>
+                <th>19:00</th><td></td><td></td><td></td><td><a href="#">予約可</a></td>
+            </tr>
+            <tr>
+                <th>20:00</th><td><a href="#">予約可</a></td><td></td><td></td><td><a href="#">予約可</a></td>
+            </tr>
+            <tr>
+                <th>21:00</th><td></td><td><a href="#">予約可</a></td><td></td><td></td>
             </tr>
         </tbody>
     </table>
