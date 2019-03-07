@@ -30,6 +30,10 @@
      background-color: navy;
  }
 
+ ._mCS_1 .mCSB_dragger:hover .mCSB_dragger_bar {
+     background-color: navy;
+ }
+
  thead.teachers, tbody.schedules {
      display: block;
      /* border: 1px solid black; */
