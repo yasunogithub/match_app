@@ -1,2 +1,14 @@
-<h1>Rooms#show</h1>
-<p>Find me in app/views/rooms/show.html.erb</p>
+<h1><%= @user.email %> Chat room</h1>
+<li><%= link_to 'LOGOUT', destroy_user_session_path, method: :delete %></li>
+
+<form>
+    <label>
+        message: <input type="text" data-behavior="room_speaker">
+    </label>
+</form>
+<br/>
+<div id="messages">
+    <% @messages.each do |message| %>
+        <div><%= "#{message.user_email}: #{message.content}" %></div>
+    <% end %>
+</div>
