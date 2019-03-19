@@ -1,0 +1,12 @@
+<h1>Teacher Login</h1>
+
+<h1>Log in</h1>
+
+<%= form_with scope: :session, url: teacher_login_path, local: true do |f| %>
+    <div class="field">
+        <%= f.label :name, "Name", class: "field_label" %>
+        <%= f.text_field :name %>
+    </div>
+
+    <%= f.submit "login" %>
+<% end %>

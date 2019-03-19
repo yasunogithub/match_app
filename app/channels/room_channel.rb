@@ -9,8 +9,6 @@ class RoomChannel < ApplicationCable::Channel
   end
 
   def speak(data)
-    # m = Message.new(user_id: current_user.id, teacher_id: params['teacher_id'], room_id: params['room_id'], content: data['message'])
-    # m.save!(:validate => false)
     Message.create! user_id: params['user_id'], teacher_id: params['teacher_id'], room_id: params['room_id'], sent_user: params['sent_user'], content: data['message']
   end
 end

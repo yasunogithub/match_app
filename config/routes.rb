@@ -1,6 +1,11 @@
 Rails.application.routes.draw do
+  namespace :teacher do
+    get '/login', to: 'sessions#new'
+    post '/login', to: 'sessions#create'
+    delete '/logout', to: 'sessions#destroy'
+  end
   # get 'rooms/show'
-  resources :rooms, only: [:show, :create]
+  resources :rooms, only: [:index, :show, :create]
   devise_for :users
   get 'reservations/index'
 

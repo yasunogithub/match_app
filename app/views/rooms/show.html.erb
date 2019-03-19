@@ -1,6 +1,12 @@
-<h1><%= @user.name %> Chat room</h1>
-<h2>To <%= @teacher.name %></h2>
-<li><%= link_to 'LOGOUT', destroy_user_session_path, method: :delete %></li>
+<% if teacher_logged_in? %>
+    <h1><%= @teacher.name %> Chat room</h1>
+    <h2>To <%= @user.name %></h2>
+    <li><%= link_to 'Teacher LOGOUT', teacher_logout_path, method: :delete %></li>
+<% else %>
+    <h1><%= @user.name %> Chat room</h1>
+    <h2>To <%= @teacher.name %></h2>
+    <li><%= link_to 'User LOGOUT', destroy_user_session_path, method: :delete %></li>
+<% end %>
 
 <form>
     <label>
@@ -11,6 +17,6 @@
 
 <div id="messages", data-room_id="<%= @room.id %>", data-user_id="<%= @user.id %>", data-teacher_id="<%= @teacher.id %>", data-sent_user="<%= @sent_user.name %>">
     <% @messages.each do |message| %>
-        <div><%= "#{message.user_name}: #{message.content}" %></div>
+        <div><%= "#{message.sent_user}: #{message.content}" %></div>
     <% end %>
 </div>

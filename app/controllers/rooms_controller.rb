@@ -1,5 +1,11 @@
 class RoomsController < ApplicationController
-  before_action :authenticate_user!
+  before_action :authenticate_user!, only: [:create]
+  before_action :authenticate_user_or_teacher, only: [:show]
+  before_action :teacher_logged_in, only: [:index]
+
+  def index
+    @entrise = Entry.all
+  end
 
   def show
     @room = Room.find(params[:id])
@@ -41,9 +47,25 @@ class RoomsController < ApplicationController
         @room =Room.find_by(id: @entry.room_id)
         return @room
       end
-      # @rooma = Room.find_by(name: "room@#{id}@#{session[:user_id]}")
-      # @roomb = Room.find_by(name: "room@#{session[:user_id]}@#{id}")
-      # @r = @rooma || @roomb 
-      # return @r 
-    end 
+    end
+
+    def authenticate_user_or_teacher
+      @entry = Entry.find_by(room_id: params[:id])
+      # unless current_user || teacher_logged_in?
+      #   redirect_to root_path
+      # end
+      if !current_user.nil?
+        unless current_user.id == @entry.user_id
+          redirect_to root_path
+        end
+      elsif !teacher_logged_in?
+        redirect_to root_path
+      end
+    end
+
+    def teacher_logged_in
+      unless teacher_logged_in?
+        redirect_to root_path
+      end
+    end
 end

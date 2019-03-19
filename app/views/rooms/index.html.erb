@@ -1,0 +1,5 @@
+<h1>チャットルーム一覧</h1>
+
+<% @entrise.each do |entry| %>
+    <div><%= link_to "#{entry.room_id}: #{entry.user.name} / #{entry.teacher.name}のチャットルーム", "/rooms/#{entry.room_id}", data: { "turbolinks" => false } %></div>
+<% end %>
