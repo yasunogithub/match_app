@@ -8,6 +8,12 @@ class RoomsController < ApplicationController
     # @messages = Message.all
     @user = User.find_by(id: @entry.user_id)
     @teacher = Teacher.find_by(id: @entry.teacher_id)
+    if current_user
+      @sent_user = User.find_by(id: current_user.id)
+    else
+      @sent_user = Teacher.find_by(id: @entry.teacher_id)
+    end
+      
   end
   
   def create

@@ -4,8 +4,8 @@ class Message < ApplicationRecord
   belongs_to :teacher
   belongs_to :room
 
-  def user_email
-    user.email
+  def user_name
+    user.name
   end
 
   def teacher_name
