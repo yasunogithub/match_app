@@ -7,4 +7,8 @@ class Message < ApplicationRecord
   def user_email
     user.email
   end
+
+  def teacher_name
+    teacher.name
+  end
 end

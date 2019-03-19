@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
-  get 'rooms/show'
+  # get 'rooms/show'
+  resources :rooms, only: [:show, :create]
   devise_for :users
   get 'reservations/index'
 

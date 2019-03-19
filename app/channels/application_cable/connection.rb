@@ -9,7 +9,9 @@ module ApplicationCable
 
     protected
       def find_verified_user
-        if verified_user = User.find_by(id: cookies.signed[:user_id])
+        session_key = cookies.encrypted[Rails.application.config.session_options[:key]]
+        verified_id = session_key['warden.user.user.key'][0][0]
+        if verified_user = User.find_by(id: verified_id)
           verified_user
         else
           reject_unauthorized_connection

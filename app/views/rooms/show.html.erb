@@ -1,4 +1,5 @@
 <h1><%= @user.email %> Chat room</h1>
+<h2>To <%= @teacher.name %></h2>
 <li><%= link_to 'LOGOUT', destroy_user_session_path, method: :delete %></li>
 
 <form>
@@ -7,7 +8,8 @@
     </label>
 </form>
 <br/>
-<div id="messages">
+
+<div id="messages", data-room_id="<%= @room.id %>", data-teacher_id="<%= @teacher.id %>">
     <% @messages.each do |message| %>
         <div><%= "#{message.user_email}: #{message.content}" %></div>
     <% end %>
