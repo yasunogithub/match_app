@@ -1,5 +1,14 @@
-<h1>チャットルーム一覧</h1>
+<div class="fh5co-loader"></div>
+<div id="page">
+    <div id="fh5co-project">
+        <div class="container">
+            <div class="row">
+                <h2>チャットルーム一覧</h2>
 
-<% @entrise.each do |entry| %>
-    <div><%= link_to "#{entry.room_id}: #{entry.user.name} / #{entry.teacher.name}のチャットルーム", "/rooms/#{entry.room_id}", data: { "turbolinks" => false } %></div>
-<% end %>
+                <% @entrise.each do |entry| %>
+                    <div><%= link_to "#{entry.room_id}: #{entry.user.name} / #{entry.teacher.name}のチャットルーム", "/rooms/#{entry.room_id}", data: { "turbolinks" => false } %></div>
+                <% end %>
+            </div>
+        </div>
+    </div>
+</div>
