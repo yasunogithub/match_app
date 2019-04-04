@@ -25,10 +25,12 @@
 						<ul>
                             <% if teacher_logged_in? %>
                                 <li><%= link_to "User 一覧", users_path, data: { "turbolinks" => false } %></li>
+                                <li><%= link_to "Teacher 一覧", teachers_path, data: { "turbolinks" => false } %></li>
                                 <li class="btn-cta"><a href="/rooms", data-turbolinks="false"><span>Room Index</span></a></li>
                                 <li class="btn-cta"><%= link_to teacher_logout_path, method: :delete do %><span>Teacher LOGOUT</span><% end %></li>
                             <% elsif user_signed_in? %>
                                 <li><%= link_to "User 一覧", users_path, data: { "turbolinks" => false } %></li>
+                                <li><%= link_to "Teacher 一覧", teachers_path, data: { "turbolinks" => false } %></li>
                                 <li class="btn-cta"><%= link_to destroy_user_session_path, method: :delete do %><span>User LOGOUT</span><% end %></li>
                             <% else %>
                                 <li class="btn-cta"><a href="/users/sign_in", data-turbolinks="false"><span>User Login</span></a></li>

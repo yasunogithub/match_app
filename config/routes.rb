@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   resources :rooms, only: [:index, :show, :create]
   devise_for :users
   resources :users, only: [:index, :show]
+  resources :teachers, only: [:index, :show]
   get 'reservations/index'
 
   root 'reservations#index'
