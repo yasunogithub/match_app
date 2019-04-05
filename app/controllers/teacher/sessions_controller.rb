@@ -9,7 +9,7 @@ class Teacher::SessionsController < ApplicationController
       log_in(teacher)
       redirect_to rooms_path, notice: "teacherとしてログインしました。"
     else
-      reder :new
+      render :new
     end
   end
 

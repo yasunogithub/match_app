@@ -9,10 +9,7 @@
 				<div class="col-md-8 col-md-offset-2 text-center">
 					<div class="display-t">
 						<div class="display-tc animate-box" data-animate-effect="fadeIn">
-                            <h1>My page (<%= @user.name %>)</h1>
-                            <% if current_user == @user %>
-                                <p><%= link_to "Profile Edit", edit_user_registration_path, data: { "turbolinks" => false }, class: "btn btn-primary btn-lg btn-learn" %></p>
-                            <% end %>
+                            <h1>Profile Edit (<%= @teacher.name %>)</h1>
 						</div>
 					</div>
 				</div>
@@ -23,8 +20,16 @@
     <div id="fh5co-project">
         <div class="container">
             <div class="row">
-                <p><%= @user.name %></p>
-                <p><%= @user.email %></p>
+                <%= form_with model: @teacher, method: :patch, local: true do |f| %>
+                    <div class="field row form-group">
+                        <%= f.label :name %>
+                        <%= f.text_field :name, class: 'form-control' %>
+                    </div>
+                
+                    <div class="actions form-group">
+                        <%= f.submit "Update", class: "btn btn-primary" %>
+                    </div>
+                <% end %>
             </div>
         </div>
     </div>

@@ -10,6 +10,9 @@
 					<div class="display-t">
 						<div class="display-tc animate-box" data-animate-effect="fadeIn">
                             <h1>My page (<%= @teacher.name %>)</h1>
+                            <% if @current_teacher == @teacher %>
+                                <p><%= link_to "Profile Edit", edit_teacher_path, data: { "turbolinks" => false }, class: "btn btn-primary btn-lg btn-learn" %></p>
+                            <% end %>
 						</div>
 					</div>
 				</div>
