@@ -3,10 +3,10 @@ class Teacher::SessionsController < ApplicationController
   end
 
   def create
-    teacher = Teacher.find_by(name: params[:session][:name])
+    @teacher = Teacher.find_by(email: params[:session][:email])
 
-    if teacher
-      log_in(teacher)
+    if @teacher && @teacher.authenticate(params[:session][:password])
+      log_in(@teacher)
       redirect_to rooms_path, notice: "teacherとしてログインしました。"
     else
       render :new

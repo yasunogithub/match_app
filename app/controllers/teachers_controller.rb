@@ -1,6 +1,6 @@
 class TeachersController < ApplicationController
   before_action :correct_teacher, only: [:edit, :update]
-  
+
   def index
     @teachers = Teacher.all
   end
@@ -25,7 +25,7 @@ class TeachersController < ApplicationController
 
   private
     def teacher_params
-      params.require(:teacher).permit(:name)
+      params.require(:teacher).permit(:name, :age, :email, :skype_id, :university, :subject, :reference_book, :etc, :password, :password_confirmation)
     end
 
     def correct_teacher
