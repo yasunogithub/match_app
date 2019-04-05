@@ -24,7 +24,7 @@
                         <% if teacher_logged_in? %>
                             <li class="<%= active?("users", "index") %>"><%= link_to "User 一覧", users_path, data: { "turbolinks" => false } %></li>
                             <li class="<%= active?("teachers", "index") %>"><%= link_to "Teacher 一覧", teachers_path, data: { "turbolinks" => false } %></li>
-                            <li class="btn-cta"><a href="/rooms", data-turbolinks="false"><span>Room Index</span></a></li>
+                            <li class="<%= active?("rooms", "index") %>"><%= link_to "Room 一覧", rooms_path, data: { "turbolinks" => false } %></li>
                             <li class="btn-cta"><%= link_to teacher_logout_path, method: :delete do %><span>Teacher LOGOUT</span><% end %></li>
                         <% elsif user_signed_in? %>
                             <li class="<%= active?("users", "index") %>"><%= link_to "User 一覧", users_path, data: { "turbolinks" => false } %></li>

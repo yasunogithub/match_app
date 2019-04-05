@@ -20,13 +20,13 @@
     <div id="fh5co-project">
         <div class="container">
             <div class="row">
-                <ul class="teachers-index">
-                <% @teachers.each do |teacher| %>
-                    <li>
-                        <%= link_to teacher.name, teacher, data: { "turbolinks" => false } %>
-                    </li>
-                <% end %>
-                </ul>
+                <div class="col-md-6 col-md-offset-3 animate-box fadeInUp animated-fast">
+                    <% @teachers.each do |teacher| %>
+                        <div>
+                            <%= link_to teacher.name, teacher, data: { "turbolinks" => false } %>
+                        </div>
+                    <% end %>
+                </div>
             </div>
         </div>
     </div>
