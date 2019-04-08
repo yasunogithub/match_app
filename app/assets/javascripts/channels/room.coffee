@@ -7,7 +7,7 @@ document.addEventListener 'turbolinks:load', ->
       # Called when the subscription has been terminated by the server
 
     received: (data) ->
-      $('#messages').prepend '<div>' + data['sent_user'] + ': ' + data['message'] + '</div>'
+      $('#messages').prepend '<div>' + data['sent_user'] + ': ' + data['message'] + ' (' + data['created_at'] + ')' + '</div>'
       # Called when there's incoming data on the websocket for this channel
 
     speak: (message) ->

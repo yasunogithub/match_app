@@ -35,7 +35,7 @@
 
                     <div id="messages", data-room_id="<%= @room.id %>", data-user_id="<%= @user.id %>", data-teacher_id="<%= @teacher.id %>", data-sent_user="<%= @sent_user.name %>">
                         <% @messages.each do |message| %>
-                            <div><%= "#{message.sent_user}: #{message.content}" %></div>
+                            <div><%= "#{message.sent_user}: #{message.content} (#{message.created_at.in_time_zone('Tokyo').strftime("%Y-%m-%d %H:%M")})" %></div>
                         <% end %>
                     </div>
                 </div>
