@@ -4,7 +4,7 @@ class RoomsController < ApplicationController
   before_action :authenticate_teacher!, only: [:index]
 
   def index
-    @entrise = Entry.all
+    @entrise = Entry.where(teacher_id: current_teacher.id)
   end
 
   def show
