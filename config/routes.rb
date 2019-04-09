@@ -1,15 +1,10 @@
 Rails.application.routes.draw do
-  devise_for :teachers
-  namespace :teacher do
-    get '/login', to: 'sessions#new'
-    post '/login', to: 'sessions#create'
-    delete '/logout', to: 'sessions#destroy'
-  end
   # get 'rooms/show'
   resources :rooms, only: [:index, :show, :create]
-  devise_for :users
+  devise_for :users, module: :users
+  devise_for :teachers, module: :teachers
   resources :users, only: [:index, :show]
-  resources :teachers, only: [:index, :show, :edit, :update]
+  resources :teachers, only: [:index, :show]
   get 'reservations/index'
 
   root 'reservations#index'

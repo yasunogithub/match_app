@@ -10,12 +10,14 @@ module ApplicationCable
     protected
       def find_verified_user
         session_key = cookies.encrypted[Rails.application.config.session_options[:key]]
-        verified_id = session_key['warden.user.user.key']
-        if !verified_id.nil?
+        user_verified_id = session_key['warden.user.user.key']
+        teacher_verified_id = session_key['warden.user.teacher.key']
+        if !user_verified_id.nil?
           verified_id = session_key['warden.user.user.key'][0][0]
           verified_user = User.find_by(id: verified_id)
-        elsif verified_user = Teacher.find_by(id: cookies.signed[:teacher_id])
-          verified_user
+        elsif !teacher_verified_id.nil?
+          verified_id = session_key['warden.user.teacher.key'][0][0]
+          verified_user = Teacher.find_by(id: verified_id)
         else
           reject_unauthorized_connection
         end

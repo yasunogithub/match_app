@@ -21,18 +21,18 @@
                 </div>
                 <div class="col-xs-11 text-right menu-1">
                     <ul>
-                        <% if teacher_logged_in? %>
+                        <% if teacher_signed_in? %>
                             <li class="<%= active?("users", "index") %>"><%= link_to "User 一覧", users_path, data: { "turbolinks" => false } %></li>
                             <li class="<%= active?("teachers", "index") %>"><%= link_to "Teacher 一覧", teachers_path, data: { "turbolinks" => false } %></li>
                             <li class="<%= active?("rooms", "index") %>"><%= link_to "Room 一覧", rooms_path, data: { "turbolinks" => false } %></li>
-                            <li class="btn-cta"><%= link_to teacher_logout_path, method: :delete do %><span>Teacher LOGOUT</span><% end %></li>
+                            <li class="btn-cta"><%= link_to destroy_teacher_session_path, method: :delete do %><span>Teacher LOGOUT</span><% end %></li>
                         <% elsif user_signed_in? %>
                             <li class="<%= active?("users", "index") %>"><%= link_to "User 一覧", users_path, data: { "turbolinks" => false } %></li>
                             <li class="<%= active?("teachers", "index") %>"><%= link_to "Teacher 一覧", teachers_path, data: { "turbolinks" => false } %></li>
                             <li class="btn-cta"><%= link_to destroy_user_session_path, method: :delete do %><span>User LOGOUT</span><% end %></li>
                         <% else %>
                             <li class="btn-cta"><a href="/users/sign_in", data-turbolinks="false"><span>User Login</span></a></li>
-                            <li class="btn-cta"><a href="/teacher/login", data-turbolinks="false"><span>Teacher Login</span></a></li>
+                            <li class="btn-cta"><a href="/teachers/sign_in", data-turbolinks="false"><span>Teacher Login</span></a></li>
                         <% end %>
                     </ul>
                 </div>

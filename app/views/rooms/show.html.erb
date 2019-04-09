@@ -9,7 +9,7 @@
 				<div class="col-md-8 col-md-offset-2 text-center">
 					<div class="display-t">
 						<div class="display-tc animate-box" data-animate-effect="fadeIn">
-                            <% if teacher_logged_in? %>
+                            <% if teacher_signed_in? %>
                                 <h1><%= @teacher.name %> Chat room</h1>
                                 <h1>To <%= @user.name %></h1>
                             <% else %>

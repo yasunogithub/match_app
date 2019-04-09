@@ -1,7 +1,7 @@
 class RoomsController < ApplicationController
   before_action :authenticate_user!, only: [:create]
   before_action :authenticate_user_or_teacher, only: [:show]
-  before_action :teacher_logged_in, only: [:index]
+  before_action :authenticate_teacher!, only: [:index]
 
   def index
     @entrise = Entry.all
@@ -58,14 +58,18 @@ class RoomsController < ApplicationController
         unless current_user.id == @entry.user_id
           redirect_to root_path
         end
-      elsif !teacher_logged_in?
+      elsif !current_teacher.nil?
+        unless current_teacher.id == @entry.teacher_id
+          redirect_to root_path
+        end
+      else
         redirect_to root_path
       end
     end
 
-    def teacher_logged_in
-      unless teacher_logged_in?
-        redirect_to root_path
-      end
-    end
+    # def teacher_logged_in
+    #   unless teacher_signed_in?
+    #     redirect_to root_path
+    #   end
+    # end
 end

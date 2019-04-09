@@ -10,9 +10,10 @@
 					<div class="display-t">
 						<div class="display-tc animate-box" data-animate-effect="fadeIn">
 							<h1>Reservation</h1>
-                            <% if !teacher_logged_in? && !user_signed_in? %>
+                            <% if !teacher_signed_in? && !user_signed_in? %>
                                 <h2>Do you have an account？</h2>
                                 <p><a class="btn btn-primary btn-lg btn-learn" href="/users/sign_in", data-turbolinks="false">User Login</a> <a class="btn btn-primary btn-lg btn-video" href="/users/sign_up", data-turbolinks="false">User Signup</a></p>
+                                <p><a class="btn btn-primary btn-lg btn-learn" href="/teachers/sign_in", data-turbolinks="false">Teacher Login</a> <a class="btn btn-primary btn-lg btn-video" href="/teachers/sign_up", data-turbolinks="false">Teacher Signup</a></p>
                             <% else %>
                                 <h2>Free html5 templates Made by <a href="http://freehtml5.co/" target="_blank">freehtml5.co</a></h2>
                             <% end %>

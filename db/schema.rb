@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_04_08_214603) do
+ActiveRecord::Schema.define(version: 2019_04_09_023527) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -49,9 +49,8 @@ ActiveRecord::Schema.define(version: 2019_04_08_214603) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "age", null: false
-    t.string "email", null: false
+    t.string "email", default: "", null: false
     t.string "skype_id", null: false
-    t.string "password_digest", null: false
     t.string "university", null: false
     t.string "subject", null: false
     t.string "reference_book", default: "", null: false
@@ -64,6 +63,10 @@ ActiveRecord::Schema.define(version: 2019_04_08_214603) do
     t.datetime "confirmed_at"
     t.datetime "confirmation_sent_at"
     t.string "unconfirmed_email"
+    t.string "faculty", null: false
+    t.string "department", null: false
+    t.integer "grade", null: false
+    t.text "introduction", null: false
     t.index ["confirmation_token"], name: "index_teachers_on_confirmation_token", unique: true
     t.index ["email"], name: "index_teachers_on_email", unique: true
     t.index ["reset_password_token"], name: "index_teachers_on_reset_password_token", unique: true
@@ -87,6 +90,10 @@ ActiveRecord::Schema.define(version: 2019_04_08_214603) do
     t.string "favorite_subject", null: false
     t.string "weak_subject", null: false
     t.text "etc", default: "", null: false
+    t.string "university", null: false
+    t.string "faculty", null: false
+    t.string "department", null: false
+    t.string "reference_book", default: "", null: false
     t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
