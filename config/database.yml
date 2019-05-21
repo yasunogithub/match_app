@@ -20,4 +20,7 @@ production:
    encoding: utf8
    reconnect: false
    database: mysql
-   pool: 5     
+   pool: 5 
+   username: root
+   password:
+   host: localhost    
