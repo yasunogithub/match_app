@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_04_09_023527) do
+ActiveRecord::Schema.define(version: 2019_10_22_081617) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -44,21 +44,41 @@ ActiveRecord::Schema.define(version: 2019_04_09_023527) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "ships", force: :cascade do |t|
+    t.string "name"
+    t.decimal "lat"
+    t.decimal "lng"
+    t.integer "price_per_person"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "target_maps", force: :cascade do |t|
+    t.bigint "ship_id"
+    t.bigint "target_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["ship_id"], name: "index_target_maps_on_ship_id"
+    t.index ["target_id"], name: "index_target_maps_on_target_id"
+  end
+
+  create_table "targets", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "teachers", force: :cascade do |t|
     t.string "name", null: false
+    t.string "email", default: "", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "age", null: false
-    t.string "email", default: "", null: false
     t.string "skype_id", null: false
     t.string "university", null: false
     t.string "subject", null: false
     t.string "reference_book", default: "", null: false
     t.text "etc", default: "", null: false
-    t.string "encrypted_password", default: "", null: false
-    t.string "reset_password_token"
-    t.datetime "reset_password_sent_at"
-    t.datetime "remember_created_at"
     t.string "confirmation_token"
     t.datetime "confirmed_at"
     t.datetime "confirmation_sent_at"
@@ -68,8 +88,6 @@ ActiveRecord::Schema.define(version: 2019_04_09_023527) do
     t.integer "grade", null: false
     t.text "introduction", null: false
     t.index ["confirmation_token"], name: "index_teachers_on_confirmation_token", unique: true
-    t.index ["email"], name: "index_teachers_on_email", unique: true
-    t.index ["reset_password_token"], name: "index_teachers_on_reset_password_token", unique: true
   end
 
   create_table "users", force: :cascade do |t|
@@ -105,4 +123,6 @@ ActiveRecord::Schema.define(version: 2019_04_09_023527) do
   add_foreign_key "messages", "rooms"
   add_foreign_key "messages", "teachers"
   add_foreign_key "messages", "users"
+  add_foreign_key "target_maps", "ships"
+  add_foreign_key "target_maps", "targets"
 end

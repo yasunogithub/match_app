@@ -5,3 +5,8 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+Ship.create(:name => '磯丸', :lat => 0.000, :lng => 0.000, price_per_person:10000)
+
+TargetMap.create(:target_id => 1,:ship_id => 1)
+Target.create(:name => "マグロ")
